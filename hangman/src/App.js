@@ -35,49 +35,50 @@ function App() {
         <div>
           <p>{searchWord}</p>
         </div>
+        <div className="searchBox">
+
+<button
+  onClick={() => {
+    getMeaning();
+  }}
+>
+  <FaSearch size="20px" />
+</button>
+</div>
+{data && (
+<div className="showResults">
+  <h2>
+    {data.word}{" "}
+    <button
+      onClick={() => {
+        playAudio();
+      }}
+    >
+      <FcSpeaker size="26px" />
+    </button>
+  </h2>
+  <h4>Parts of speech:</h4>
+
+   
+<p>{data.meanings[0].partOfSpeech}</p>
+
+
+  <h4>Definition:</h4>
+
+   
+<p>{data.meanings[0].definitions[0].definition}</p>
+
+
+  <h4>Example:</h4>
+
+   
+<p>{data.meanings[0].definitions[0].example}</p>
+
+</div>
+)}
       </header>
 
-      <div className="searchBox">
-
-        <button
-          onClick={() => {
-            getMeaning();
-          }}
-        >
-          <FaSearch size="20px" />
-        </button>
-      </div>
-      {data && (
-        <div className="showResults">
-          <h2>
-            {data.word}{" "}
-            <button
-              onClick={() => {
-                playAudio();
-              }}
-            >
-              <FcSpeaker size="26px" />
-            </button>
-          </h2>
-          <h4>Parts of speech:</h4>
- 
-           
-<p>{data.meanings[0].partOfSpeech}</p>
- 
- 
-          <h4>Definition:</h4>
- 
-           
-<p>{data.meanings[0].definitions[0].definition}</p>
- 
- 
-          <h4>Example:</h4>
- 
-           
-<p>{data.meanings[0].definitions[0].example}</p>
- 
-        </div>
-      )}
+     
     </div>
   );
 }
