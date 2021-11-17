@@ -3732,7 +3732,7 @@ const words = ["A",
 "afterturn",
 "aftervision",
 "afterwale",
-"afterwar",
+
 "afterward",
 "afterwards",
 "afterwash",
